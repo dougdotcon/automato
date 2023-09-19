@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Vendas</title>
+    <!-- Adicione links para CSS externos aqui, se necessário -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Dashboard de Vendas</h1>
+        <nav>
+            <!-- Adicione links de navegação aqui, se necessário -->
+            <a href="{{ url_for('upload') }}">Upload de Dados</a>
+            <a href="{{ url_for('dashboard') }}">Visualizar Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Bloco para conteúdo principal -->
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Empresa XYZ. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Adicione scripts JS externos aqui, se necessário -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+ 
+<!-- Implementar o template para edição de dados -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Editar Dados de Vendas</h2>
+
+<form action="{{ url_for('update_data') }}" method="post">
+    <div class="form-group">
+        <label for="grupo">Marca/Grupo:</label>
+        <input type="text" id="grupo" name="grupo" value="{{ data['Grupo'] }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="vlr_venda">Valor de Venda:</label>
+        <input type="number" id="vlr_venda" name="vlr_venda" value="{{ data['Vlr Venda'] }}" step="0.01" required>
+    </div>
+
+    <div class="form-group">
+        <label for="vlr_dev">Valor de Devolução:</label>
+        <input type="number" id="vlr_dev" name="vlr_dev" value="{{ data['Vlr Dev.'] }}" step="0.01" required>
+    </div>
+
+    <div class="form-group">
+        <label for="venda_liquida">Venda Líquida:</label>
+        <input type="number" id="venda_liquida" name="venda_liquida" value="{{ data['Venda Líquida'] }}" step="0.01" required>
+    </div>
+
+    <!-- Adicione mais campos conforme necessário -->
+
+    <div class="form-group">
+        <input type="submit" value="Atualizar Dados">
+    </div>
+</form>
+
+{% endblock %}
